@@ -1,0 +1,42 @@
+<app-banner></app-banner>
+<main>
+    <div style="height:15px;"></div>
+
+
+
+
+    <form #f="ngForm" novalidate>
+        <div class="wrap">
+            <div class="search">
+                <input name="ASIN" ngModel required #ASIN="ngModel" type="text" class="searchTerm" placeholder="Enter the ASIN of the product you are looking for">
+                <button type="submit" class="searchButton" (click)="getProductById(ASIN)">
+                    <i class="material-icons">search</i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div *ngIf="content.asin" style="margin-bottom:20px;">
+        <table>
+            <tr>
+                <th>ASIN</th>
+                <th>Category</th>
+                <th>Rank</th>
+                <th>Dimensions</th>
+            </tr>
+            <tr>
+                <td>{{this.content.asin}}</td>
+                <td>{{this.content.category}}</td>
+                <td>{{this.content.rank}}</td>
+                <td>{{this.content.dimensions}}</td>
+            </tr>
+        </table>
+    </div>
+    <button class="showHide" type="submit" (click)="toggleTestCases()">{{showTestCases}} Test ASINs</button>
+    <div *ngIf="showTestCases=='Hide'" style="white-space: pre-wrap;"> 
+        <div style="display: flex;flex-wrap: wrap;padding-bottom:20px;">Test ASINs in Js Table: 
+            <span *ngFor="let id of this.jsContent;let last = last"> {{id.asin}}<span *ngIf="!last">,</span></span>
+        </div>
+            <div style="display: flex;flex-wrap: wrap;">Test ASINs in Amz Table: 
+            <span  *ngFor="let id of this.amzContent"> {{id.asin}}<span *ngIf="!last">,</span></span></div>
+    </div>
+</main>

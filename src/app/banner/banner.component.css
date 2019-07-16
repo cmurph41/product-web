@@ -1,0 +1,24 @@
+
+  .banner{
+      display:flex;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      height:47px;
+      box-shadow: 0 2px 10px 0 #d6d6d6;
+      padding-left:15px;
+  }
+.navBar {
+    padding-top: 5px;
+}
+.navButton {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    text-transform: capitalize;
+    letter-spacing: -.5px;
+    padding: 10px 22px!important;
+    color:black;
+    text-decoration: none;
+}
