@@ -1,38 +1,41 @@
 <app-banner></app-banner>
-
 <main style="display:flex;flex-flow: column;justify-content: center">
+    <section>
+        <h1>Documentation Links</h1>
+        <p></p>
+        <a aria-label="opens api service code in new tab" href="https://github.com/cmurph41/product-service" target="_blank" style="text-decoration: underline;">
+            <p>API Service Repository</p>
+        </a>
+        <a aria-label="opens api service swagger in new tab" href="http://cmurph41-jungle-scout.us-east-2.elasticbeanstalk.com/swagger-ui.html"
+            target="_blank" style="text-decoration: underline;">
+            <p>API Service Swagger</p>
+        </a>
+        <a aria-label="opens api service swagger in new tab" href="https://github.com/cmurph41/product-web " target="_blank" style="text-decoration: underline;">
+            <p>Angular Web App Repository</p>
+        </a>
+        <!-- -->
+    </section>
     <section style="display:flex;flex-flow: column">
         <h1>Architecture Diagram:</h1>
         <p>Below is the architecture of the app. I took advanage of the AWS free year to serve each part</p>
-        <div style="height:400px;width:530px;"><img height="400px" src="../../assets/images/Architecture Diagram.png"></div>
-
+        <div style="height:400px;width:530px;">
+            <img height="400px" src="../../assets/images/Architecture Diagram.png">
+        </div>
     </section>
     <section>
         <h1>Database Tables:</h1>
-        <p>In order to keep thing simple, I created basic tables with the same schema.
-        For the data source, I created a csv file with 20 records manually taken from Amazon. 
+        <p>In order to keep thing simple, I created basic tables with the same schema. For the data source, I created a csv
+            file with 20 records manually taken from Amazon.
         </p>
         <img height="100px" src="../../assets/images/AMZ_PRODUCTS.PNG">
         <img height="100px" src="../../assets/images/JS_AMZ_PRODUCTS.PNG">
     </section>
-
     <section>
-        <h1>Useful Links</h1>
-        <p></p>
-        <a aria-label="opens api service code in new tab" href="https://github.com/cmurph41/product-service" target="_blank" style="text-decoration: underline;">
-            <p>API Service Repository</p>
-        </a> 
-        <a aria-label="opens api service swagger in new tab" href="http://cmurph41-jungle-scout.us-east-2.elasticbeanstalk.com/swagger-ui.html" target="_blank" style="text-decoration: underline;">
-            <p>API Service Swagger</p>
-        </a> 
-        <!--  -->
+        <h1>Assumptions/Shortcuts</h1>
+        <p>I ignored security</p>
     </section>
     <section>
-            <h1>Assumptions/Shortcuts</h1>
-            <p>I ignored security</p>
-        </section>
-        <section>
-                <h1>Technology Stack</h1>
-                <img width="600px" src="../../assets/images/TECHSTACK.PNG">
-            </section>
+        <h1>Technology Stack</h1>
+        <img width="600px" src="../../assets/images/TECHSTACK.PNG">
+    </section>
 </main>

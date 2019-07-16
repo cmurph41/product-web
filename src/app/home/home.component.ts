@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -17,47 +17,40 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     constructor(private productService: ProductService) {
     }
-    //B002QYW81W
 
     ngOnInit() {
         this.setUpSub();
     }
     toggleTestCases() {
-        if(this.showTestCases=="Show") {
-            this.showTestCases="Hide";
+        if (this.showTestCases == "Show") {
+            this.showTestCases = "Hide";
         } else {
             this.showTestCases = "Show";
         }
     }
-    public setUpSub(){ 
+    public setUpSub() {
         this.productService
             .getAllJsIds()
             .subscribe((data: any) => {
-                this.jsContent=data;
-            } 
-        );
+                this.jsContent = data;
+            }
+            );
         this.productService
             .getAllAmzIds()
             .subscribe((data: any) => {
-                this.amzContent=data;
+                this.amzContent = data;
             });
     }
 
-    getProductById(id:any):void { 
+    getProductById(id: any): void {
         let temp = id.viewModel;
         this.productService
             .getContentById(temp)
             .subscribe((data: any) => {
-                console.log(data[0]);
-                this.content=data[0];
-            } 
-               );
+                this.content = data;
+            }
+            );
     }
-
-    onSubmit(f: NgForm) {
-        console.log(f.value);  // { first: '', last: '' }
-        console.log(f.valid);  // false
-      }
 
     ngOnDestroy() {
     }
