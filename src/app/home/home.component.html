@@ -1,6 +1,5 @@
 <app-banner></app-banner>
 <main>
-    <div style="height:15px;"></div>
     <form #f="ngForm" novalidate>
         <div class="wrap">
             <div class="search">
@@ -11,7 +10,7 @@
             </div>
         </div>
     </form>
-    <div *ngIf="content.asin" style="margin-bottom:20px;">
+    <div *ngIf="content.asin">
         <table>
             <tr>
                 <th>ASIN</th>
@@ -22,11 +21,13 @@
             <tr>
                 <td>{{this.content.asin}}</td>
                 <td>{{this.content.category}}</td>
-                <td>{{this.content.rank}}</td>
+                <td>#{{this.content.rank}}</td>
                 <td>{{this.content.dimensions}}</td>
             </tr>
         </table>
     </div>
+    <div class="warning" *ngIf="this.error.showError" ><i style="padding-right: 10px;" class="material-icons">error_outline</i>{{this.error.message}}</div>
+
     <button class="showHide" type="submit" (click)="toggleTestCases()">{{showTestCases}} Test ASINs</button>
     <div *ngIf="showTestCases=='Hide'" style="white-space: pre-wrap;"> 
         <div style="display: flex;flex-wrap: wrap;padding-bottom:20px;">Test ASINs in Js Table: 

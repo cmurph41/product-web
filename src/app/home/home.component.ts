@@ -14,8 +14,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     amzContent: any = new Map();
     jsContent: any = new Map();
     showTestCases = "Show";
+    error: any = new Map();
 
     constructor(private productService: ProductService) {
+        this.error.showError = false;
     }
 
     ngOnInit() {
@@ -46,8 +48,17 @@ export class HomeComponent implements OnInit, OnDestroy {
         let temp = id.viewModel;
         this.productService
             .getContentById(temp)
-            .subscribe((data: any) => {
+            .subscribe(
+                (data: any) => {
                 this.content = data;
+                this.error.showError=false;
+
+            },
+            (err:any)=> {
+                this.error.showError=true;
+                this.error.message = err.error;
+                this.content.asin = false;
+                
             }
             );
     }

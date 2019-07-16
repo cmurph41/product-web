@@ -15,7 +15,8 @@ export class ProductService {
 
     public initContent() {
         const obs = this.productControllerService.jsAllUsingGET();
-        obs.subscribe((data:any)=>{ 
+        obs.subscribe(
+            (data:any)=>{ 
             this.content = data;
         });
     }
